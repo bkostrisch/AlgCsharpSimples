@@ -1,0 +1,23 @@
+using System;
+
+namespace Questão04
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string nome;
+            double a, b, c; 
+            Console.WriteLine("Digite seu nome: ");
+            nome = Console.ReadLine();
+            Console.WriteLine("Quanto você ganha por mês sem comissão?");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Quanto, em $, você vendeu este mês?");
+            b = double.Parse(Console.ReadLine());
+            c = a + (b * 0.15);
+            Console.WriteLine("O vendedor {0} recebe mensalmente {1} mas este mês receberá {2}", nome, a, c);
+            Console.ReadKey();
+
+        }
+    }
+}
