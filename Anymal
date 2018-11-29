@@ -1,0 +1,178 @@
+CLASSE
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Veterinario
+{
+    class Animais
+    {
+        public int id { get; set; }
+        public string nome { get; set; }
+        public string raca { get; set; }
+        public string peso { get; set; }
+        public string sangue { get; set; }
+    }
+}
+
+______________________________________________________________
+CÓDIGO
+
+using System;
+using System.Collections;
+using System.IO;
+
+namespace Veterinario
+{
+    class Program
+    {
+
+        static ArrayList listaAnimais = new ArrayList();
+        static string diretorio = @"C:\Users\Pichau\Desktop\cadastro.txt";
+        static void Main(string[] args)
+        {
+            Carregar();
+            Menu();
+        }
+        static void Menu()
+        {
+            Console.WriteLine("Seja bem-vindo ao Anymal!\nQue operação deseja realizar?");
+            Console.WriteLine("1 - Cadastrar.");
+            Console.WriteLine("2 - Alterar.");
+            Console.WriteLine("3 - Consultar.");
+            Console.WriteLine("4 - Listar.");
+            Console.WriteLine("5 - Sair.");            
+            switch (Console.ReadLine())
+            {
+                case "1":                    
+                    Cadastro();
+                    Console.ReadKey();
+                    Console.Clear();                    
+                    Menu();
+                    break;
+
+                case "2":
+                    Alterar();
+                    Console.ReadKey();
+                    Console.Clear();
+                    Menu();
+                    break;
+
+                case "3":                    
+                    Consultar();
+                    Console.ReadKey();
+                    Console.Clear();
+                    Menu();
+                    break;
+                    
+                case "4":                    
+                    Listagem();
+                    Console.ReadKey();
+                    Console.Clear();
+                    Menu();
+                    break;
+
+                case "5":
+                    Console.Clear();
+                    break;
+                    
+
+            }
+        }
+        static void Cadastro()
+        {
+            Console.Clear();
+            do
+            {
+                Animais ani = new Animais();
+                ani.id = listaAnimais.Count + 1;
+                Console.WriteLine("Nome do pet:");
+                ani.nome = Console.ReadLine();
+                Console.WriteLine("Raça:");
+                ani.raca = Console.ReadLine();
+                Console.WriteLine("Peso:");
+                ani.peso = Console.ReadLine();
+                Console.WriteLine("Tipo sanguíneo:");
+                ani.sangue = Console.ReadLine();
+                listaAnimais.Add(ani);
+                Console.WriteLine("Deseja cadastrar mais algum animal? Digite 's' para sim.");
+            } while (Console.ReadLine().ToUpper() == "S");
+
+            StreamWriter salva = new StreamWriter(diretorio);
+            foreach (Animais animal in listaAnimais)
+            {
+                salva.WriteLine("{0} | {1} | {2} | {3} | {4}", animal.id, animal.nome, animal.raca, animal.peso, animal.sangue);
+            }
+            salva.Close();
+        }        
+        static void Carregar()
+        {
+            if (File.Exists(diretorio))
+            {
+                string[] linhas = File.ReadAllLines(diretorio);
+                foreach (string linha in linhas)
+                {
+                    string[] parte = linha.Split('|');
+                    Animais any = new Animais();
+                    any.id = int.Parse(parte[0]);
+                    any.nome = parte[1];
+                    any.raca = parte[2];
+                    any.peso = parte[3];
+                    any.sangue = parte[4];
+                    listaAnimais.Add(any);
+                }
+            }
+        }
+        static void Listagem()
+        {
+            Console.Clear();
+            foreach (Animais anima in listaAnimais)
+            {
+                Console.WriteLine("{0} | Nome: {1} | Raça: {2} | Peso: {3} | Tipo Sanguíneo: {4}", anima.id, anima.nome, anima.raca, anima.peso, anima.sangue);
+            }
+        }
+        static void Consultar()
+        {
+            Console.Clear();           
+            Console.WriteLine("Digite o pet que deseja pesquisar:");
+            string nomePet = Console.ReadLine();
+            foreach (Animais animal in listaAnimais)
+            {
+                if (animal.nome.ToLower().Contains(nomePet.ToLower()))
+                {
+                    Console.WriteLine("{0} | Nome: {1} | Raça: {2} | Peso: {3} | Tipo Sanguíneo: {4}", animal.id, animal.nome, animal.raca, animal.peso, animal.sangue);
+                   
+                }
+            }            
+        }
+        static void Alterar()
+        {
+            Listagem();            
+            Console.WriteLine("Digite o número do pet que deseja alterar:");
+            int a = int.Parse(Console.ReadLine());
+            foreach (Animais animal in listaAnimais)
+            {
+                if (animal.id == a)
+                {                   
+                    Console.WriteLine("Novo nome do pet:");
+                    animal.nome = Console.ReadLine();
+                    Console.WriteLine("Nova raça:");
+                    animal.raca = Console.ReadLine();
+                    Console.WriteLine("Novo peso:");
+                    animal.peso = Console.ReadLine();
+                    Console.WriteLine("Novo tipo sanguíneo:");
+                    animal.sangue = Console.ReadLine();
+
+                    StreamWriter salva = new StreamWriter(diretorio);
+                    foreach (Animais anima in listaAnimais)
+                    {
+                        salva.WriteLine("{0} | {1} | {2} | {3} | {4}", anima.id, anima.nome, anima.raca, anima.peso, anima.sangue);
+                    }
+                    salva.Close();
+                }
+            }
+        }       
+        
+    }
+}
