@@ -1,0 +1,23 @@
+﻿using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 0, i = 2;
+            Console.WriteLine("Digite um número a ser fatorado: ");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Os divisores de {0} são:", n);
+            for (i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    Console.WriteLine(i);
+                }
+                
+            }           
+        }
+    }
+}
