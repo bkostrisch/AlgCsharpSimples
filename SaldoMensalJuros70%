@@ -1,0 +1,17 @@
+using System;
+
+namespace Questão07
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b;
+            Console.WriteLine("Digite o valor depositado: ");
+            a = double.Parse(Console.ReadLine());
+            b = a + (a * 0.70);
+            Console.WriteLine("Após um mês, o valor em sua conta será de: {0}", b);
+            Console.ReadKey();
+        }
+    }
+}
