@@ -1,0 +1,20 @@
+using System;
+
+namespace Questão03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c;
+            Console.WriteLine("Quantos km você percorreu?");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Quanto de gasolina você gastou?");
+            b = double.Parse(Console.ReadLine());
+            c = a / b;
+            Console.WriteLine("Seu carro faz {0}km/l", c);
+            Console.ReadKey();
+
+        }
+    }
+}
