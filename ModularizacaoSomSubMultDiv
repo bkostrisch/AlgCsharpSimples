@@ -1,0 +1,32 @@
+﻿using System;
+
+namespace Ex1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite dois números: ");
+            float x = float.Parse(Console.ReadLine()), y = float.Parse(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Soma: {0}. \nSubtração: {1}. \nMultiplicação: {2}. \nDivisão: {3}.", Soma(x, y), Sub(x, y), Mult(x, y), Div(x, y));
+
+        }       
+        static float Soma(float x, float y)
+        {
+            return x + y;
+        }
+        static float Sub(float x, float y)
+        {
+            return x - y;
+        }
+        static float Mult(float x, float y)
+        {
+            return x * y;
+        }
+        static float Div(float x, float y)
+        {
+            return x / y;
+        }
+    }
+}
