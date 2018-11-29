@@ -1,0 +1,17 @@
+﻿using System;
+
+namespace Questão05
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b;
+            Console.WriteLine("Digite a temperatura em Celsius: ");
+            a = double.Parse(Console.ReadLine());
+            b = (9 * a + 160) / 5;
+            Console.WriteLine("A temperatura {0}ºC equivale à {1}ºF", a, b);
+            Console.ReadKey();
+        }
+    }
+}
