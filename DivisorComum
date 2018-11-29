@@ -1,0 +1,43 @@
+using System;
+
+namespace DivisorComum
+{
+    class Program
+    {
+        static void Main()
+        {
+            int m=0, n=0, k=0, x=0, y=0;
+            Console.WriteLine("Digite um número: ");
+            m = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite um número: ");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite um número: ");
+            k = int.Parse(Console.ReadLine());
+            Console.WriteLine("Os divisores de {0} são: ", m);
+            for (x=2; x < m; x++)
+            {
+                
+                if (m % x == 0)
+                {
+                    Console.WriteLine(x);
+                }                
+            }
+            Console.WriteLine("Os divisores de {0} são: ", n);
+            for (y = 2; y < n; y++)
+            {
+                if (n % y == 0)
+                {
+                    Console.WriteLine(y);
+                }                
+            }
+            if (x == y && x < k)
+            {
+                Console.WriteLine("O divisor em comum entre {0} e {1} maior que {2} é: {3}", m, n, k, x);
+            }
+            else if (x == y && x > k)
+            {
+                Console.WriteLine("Não existem divisores em comum entre {0} e {1} maiores que {2}.", m, n, k);
+            }
+        }
+    }
+}
