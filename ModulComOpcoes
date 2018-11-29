@@ -1,0 +1,54 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite dois números: ");
+            float x = float.Parse(Console.ReadLine()), y = float.Parse(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Que operação você deseja realizar: Soma, Subtração, Multiplicação ou Divisão?");
+            string resposta = Console.ReadLine();
+            Console.Clear();
+            if (resposta.ToLower().Contains("soma"))
+            {
+                Console.WriteLine("Soma: {0}.", Soma(x, y));
+            }
+            else if (resposta.ToLower().Contains("sub"))
+            {
+                Console.WriteLine("Subtração: {0}.", Sub(x, y));
+            }
+            else if (resposta.ToLower().Contains("multi"))
+            {
+                Console.WriteLine("Multiplicação: {0}.", Mult(x, y));
+            }
+            else if (resposta.ToLower().Contains("divis"))
+            {
+                Console.WriteLine("Divisão: {0}.", Div(x,y));
+            }
+            else
+            {
+                Console.WriteLine("Opa! Dado incorreto. :( Tente novamente.");
+            }
+            
+        }
+        static float Soma(float x, float y)
+        {
+            return x + y;
+        }
+        static float Sub(float x, float y)
+        {
+            return x - y;
+        }
+        static float Mult(float x, float y)
+        {
+            return x * y;
+        }
+        static float Div(float x, float y)
+        {
+            return x / y;
+        }
+    }
+}
