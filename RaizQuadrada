@@ -1,0 +1,15 @@
+﻿using System;
+
+namespace QuadradoPerfeito
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            Console.WriteLine("Digite um número: ");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("A raiz quadrada de {0} é: {1}", n, Math.Sqrt(n));
+        }
+    }
+}
