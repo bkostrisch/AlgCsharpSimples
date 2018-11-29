@@ -1,4 +1,6 @@
-CLASSE
+//Programa que serve para armazenar dados de animais em um arquivo.txt. É preciso salvar depois de inserir e carregar antes de listar.
+//Para funcionar, favor trocar a variável diretório para alguma pasta existente no seu computador. 
+//Classe clientes.cs
 
 using System;
 using System.Collections.Generic;
@@ -16,8 +18,7 @@ namespace Veterinario
     }
 }
 
-______________________________________________________________
-CÓDIGO
+//Program.cs
 
 using System;
 using System.Collections;
