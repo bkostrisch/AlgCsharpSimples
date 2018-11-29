@@ -1,0 +1,27 @@
+﻿using System;
+
+namespace Questão3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] names = new string[3];
+            float[] heights = new float[3];
+            int i;            
+            for (i = 0; i < names.Length; i++)
+            {
+                Console.WriteLine("Write a name: ");
+                names[i] = Console.ReadLine();
+                Console.WriteLine("Write a height: ");
+                heights[i] = float.Parse(Console.ReadLine());
+            }           
+            Console.Clear();
+            for (i = 0; i < 3; i++)
+            {
+                Console.WriteLine("{0} measures {1}", names[i], heights[i]);                
+            }
+
+        }
+    }
+}
