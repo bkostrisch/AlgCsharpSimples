@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections;
+
+namespace Questão4
+{
+    class Program
+    {
+        static void Main()
+        {
+            string[] names = new string[10];
+            float[] heights = new float[10];
+            string person;
+            int i = 0;
+            for (i = 0; i < names.Length; i++)
+            {
+                Console.WriteLine("Write a name: ");
+                names[i] = Console.ReadLine();
+                Console.WriteLine("Write a height: ");
+                heights[i] = float.Parse(Console.ReadLine());
+            }
+            Console.Clear();
+            Console.WriteLine("Write the name you wish to find: ");
+            person = Console.ReadLine();
+            Console.Clear();
+           for (i = 0; i < 10; i++)
+            {
+                if (person == names[i])
+                {
+                    Console.WriteLine("Name Found: {0}. This person measures: {1}.", names[i], heights[i]);
+                }
+            }         
+            
+        }
+    }
+}
