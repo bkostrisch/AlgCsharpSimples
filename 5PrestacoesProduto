@@ -1,0 +1,17 @@
+﻿using System;
+
+namespace Questão08
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b;
+            Console.WriteLine("Qual o valor do produto?");
+            a = double.Parse(Console.ReadLine());
+            b = a / 5;
+            Console.WriteLine("Você irá pagar {0} reais por mês durante 5 meses.", b);
+            Console.ReadKey();
+        }
+    }
+}
