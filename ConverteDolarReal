@@ -1,0 +1,20 @@
+using System;
+
+namespace Questão06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c; 
+            Console.WriteLine("Qual o valor da cotação do dólar?");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Digite um valor em dólar: ");
+            b = double.Parse(Console.ReadLine());
+            c = b / a;
+            Console.WriteLine("O valor de {0} dólares em real é: {1}", b, c);
+            Console.ReadKey();
+        
+        }
+    }
+}
