@@ -1,0 +1,20 @@
+﻿using System;
+
+namespace Questão09
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c;
+            Console.WriteLine("Qual o valor do produto?");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("De quantos % é o acréscimo que você deseja aplicar?");
+            b = double.Parse(Console.ReadLine());
+            c = a + (a * b / 100);
+            Console.WriteLine("O valor novo de venda do produto é: {0}", c);
+            Console.ReadKey();
+
+        }
+    }
+}
